@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+  bool var = true;
+  while(var){
+    sleep(1);
+  }
+}

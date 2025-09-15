@@ -1,0 +1,15 @@
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+
+int main(void) {
+  char *line = NULL;
+  size_t len = 0;
+
+  printf("Type: \n");
+  getline(&line, &len, stdin);
+
+  printf("\n%s", line);
+  free(line);
+}
