@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main(void) {
+  // 1. Receive user input -> full path command
+  
+
+  // 2. Execute command -> fork () and exec()
+  // 3. Do 1. and 2. always
+  return 0;
+}

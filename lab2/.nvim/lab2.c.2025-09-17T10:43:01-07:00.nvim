@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void){
+// 1. Receive user input -> full path command
+  char input
+  scanf("%s", input);
+  printf("%s",input);
+// 2. Execute command -> fork () and exec()
+// 3. Do 1. and 2. always
+  return 0;
+}
