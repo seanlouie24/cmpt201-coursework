@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LEN 5
+
+
+int current_len = 0;
+
+//Two functions
+void remove_oldest_record(){
+  for (int i = 1; i < max_len; i++){
+    strcpy(history[i-1], history[i]);
+  }
+  current_len--;
+}
+
+void add_to_history(const char *line){
+  if (current_len == max_len){
+    remove_oldest_record();
+  }
+  
+}
+
+
+int main(){
+//Receive user input line by line
+  char *line = NULL;
+  size_t n = 0;
+
+  printf("Enter input: ");
+  nread = (&line, &n, stdin);
+
+//Store the last 5 inputs
+  char *get_input(void){
+    char *buffer = NULL;
+    size_t bufsize = 0;
+    printf("Enter input: ");
+    ssize_t len = getline(&buffer, &bufsize, stdin);
+    if(len == -1){
+      exit(1)
+    }
+    if(len > 0 && buffer[len-1] == '\n'){
+      buffer[len-1] = '/0';
+    }
+    return buffer;
+  }
+
+  void add_to_history(char *input){
+    if(history_count >= MAX_LEN){
+      remove_oldest_record();
+    }
+    input_history[history_count] = input;
+    history_count++;
+  }
+
+  void remove_oldest_record(void){
+    if(history_count > 0){
+      free(input_history[0]);
+      for(int i=0; i <history_count; ++i){
+        input_history[i-1] = input_history[i];
+      }
+      --history_count;
+    }
+  }
+
+//When user provideds provides "print" then print last 5 inputs
+}
+
+void print_history(void){
+  for(int i = 0l i < history_count; ++i){
+    printf("%s\n", inputhistory[i]);
+  }
+}
+
